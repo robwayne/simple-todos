@@ -3,8 +3,6 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { Template } from 'meteor/templating';
 
 import { Tasks } from '../api/tasks.js';
-
-
 import './body.html';
 import './task.js';
 
@@ -39,4 +37,5 @@ Template.body.events({
 
 Template.body.onCreated(function bodyOnCreated(){
   this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
 });
